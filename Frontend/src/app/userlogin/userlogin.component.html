@@ -1,0 +1,10 @@
+<div class="container col-md-6">
+    <form (ngSubmit)="submit()">
+        <h3>Login here</h3><br>
+        <h4 *ngIf="invalidcreds">Invalid Credentials</h4>
+        <input class="form-control" type="email" placeholder="Enter Email" name="email" [(ngModel)]="user.email"><br>
+        <input class="form-control" type="password" placeholder="Enter Password" name="password"
+            [(ngModel)]="user.password"><br>
+        <button class="btn btn-primary" type="submit">Submit</button>
+    </form>
+</div>

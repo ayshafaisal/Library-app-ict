@@ -1,0 +1,21 @@
+<div class="container col-md-6">
+    <form (ngSubmit)="submit()">
+        <h3>Register here</h3><br>
+        <input class="form-control" type="text" placeholder="Enter First Name" name="firstName"
+            [(ngModel)]="user.firstName"><br>
+        <input class="form-control" type="text" placeholder="Enter Last Name" name="lastName"
+            [(ngModel)]="user.lastName"><br>
+        <input class="form-control" type="email" placeholder="Enter Email" name="email" [(ngModel)]="user.email"><br>
+        <input class="form-control" type="number" placeholder="Enter Phone Number" name="phone"
+            [(ngModel)]="user.phone"><br>
+        <input class="form-control" type="password" placeholder="Enter Password" name="password"
+            [(ngModel)]="user.password"><br>
+        <input class="form-control" type="password" placeholder="Confirm Password" name="confirmpassword"
+            [(ngModel)]="confirmpass"><br>
+        <input class="form-control" type="text" placeholder="Enter Address" name="Address"
+            [(ngModel)]="user.address"><br>
+
+
+        <button class="btn btn-primary" type="submit">Submit</button>
+    </form>
+</div>

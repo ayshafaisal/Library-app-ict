@@ -1,0 +1,30 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    {{ title }}
+  </h1>
+  <marquee id="mark">Welcome to this Platform for a new experience in Library Management!!!</marquee>
+</div>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+ 
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+   
+    <ul class="navbar-nav navbar-right">
+      <a class="nav-link"  routerLink="/home" *ngIf="!_auth.loggedIn()" routerLinkActive="active">Home</a>
+        <a class="nav-link"  routerLink="/books" *ngIf="_auth.loggedIn()" routerLinkActive="active">Book List</a>
+        <a class="nav-link"  routerLink="/login" *ngIf="!_auth.loggedIn()" routerLinkActive="active">Admin Login</a>
+        <a class="nav-link"  routerLink="/userlogin" *ngIf="!_auth.loggedIn()" routerLinkActive="active">User Login</a>
+        <a class="nav-link"  routerLink="/userregister" *ngIf="!_auth.loggedIn()" routerLinkActive="active">User SignUp</a>
+        <a class="nav-link" style="cursor:pointer" *ngIf="_auth.loggedIn()" (click)="loggedUser()">Add Book</a>
+        <a class="nav-link" style="cursor:pointer" *ngIf="_auth.loggedIn()" (click)="logoutUser()">Admin Logout</a>
+        <a class="nav-link" style="cursor:pointer" *ngIf="!_auth.loggedIn() && _auth.userloggedIn()" (click)="logoutUser()">User Logout</a>
+    </ul>
+  </div>
+</nav>    
+
+  
+<div id="bg" class="container">
+  <router-outlet></router-outlet>           
+</div>

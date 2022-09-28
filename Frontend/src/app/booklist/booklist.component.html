@@ -1,0 +1,46 @@
+<div class='card'>
+    <div class='card-header'>
+     {{pageTitle}}
+    </div>
+    
+    <div class='card-body'>            
+      <div class='table-responsive'>
+        <table class='table bg-pic'
+              *ngIf = 'books && books.length'>
+          <thead>
+            <tr>
+              <th>
+                <button class='btn btn-primary'
+                (click)='toggleImage()'>
+                  {{showImage? 'Hide' : 'Show'}} Image
+                </button>
+              </th>
+              <th>Book</th>
+              <th>Author Name</th>
+              <th>Available</th>
+              <th>Description</th>
+              <th>Price</th>
+              <th>5 Star Rating</th>
+            </tr>
+           
+          </thead>
+          <tbody>  
+              <tr *ngFor='let book of books'>
+                  <td><img *ngIf='showImage'
+                    [src] = 'book.imageUrl' 
+                    [title] = 'book.bookName'
+                    [style.width.px] = 'imageWidth' 
+                    [style.margin.px] = 'imageMargin'></td>
+                  <td>{{ book.bookName|uppercase }}</td>
+                  <td>{{ book.authorName }}</td>
+                  <td>{{ book.releaseDate }}</td>
+                  <td>{{ book.description }}</td>
+                  <td>{{ book.price|currency:'USD' }}</td>
+                  <td>{{ book.starRating }}</td>
+                </tr>              
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  
